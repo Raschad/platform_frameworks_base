@@ -4503,6 +4503,36 @@ public final class Settings {
          */
         public static final String HOME_WAKE_BUTTON = "home_wake_button";
 
+	/**
+         * Whether to wake the screen with the camera key half-press.
+         * 0 = 0ff, 1 = on
+         */
+        public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
+
+        /** @hide */
+        public static final Validator CAMERA_WAKE_SCREEN_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether or not to send device back to sleep if Camera button is released ("Peek")
+         * 0 = 0ff, 1 = on
+         */
+        public static final String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+
+        /** @hide */
+        public static final Validator CAMERA_SLEEP_ON_RELEASE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether to launch secure camera app when key is longpressed
+         * 0 = 0ff, 1 = on
+         */
+        public static final String CAMERA_LAUNCH = "camera_launch";
+
+        /** @hide */
+        public static final Validator CAMERA_LAUNCH_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+	
         /**
          * @hide
          */
@@ -5378,6 +5408,9 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT);
+	    PRIVATE_SETTINGS.add(CAMERA_WAKE_SCREEN);
+            PRIVATE_SETTINGS.add(CAMERA_SLEEP_ON_RELEASE);
+            PRIVATE_SETTINGS.add(CAMERA_LAUNCH);
         }
 
 
@@ -5503,6 +5536,9 @@ public final class Settings {
             VALIDATORS.put(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
                     OMNI_BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+	    VALIDATORS.put(CAMERA_WAKE_SCREEN, CAMERA_WAKE_SCREEN_VALIDATOR);
+            VALIDATORS.put(CAMERA_SLEEP_ON_RELEASE, CAMERA_SLEEP_ON_RELEASE_VALIDATOR);
+            VALIDATORS.put(CAMERA_LAUNCH, CAMERA_LAUNCH_VALIDATOR);
         }
 
         /**
